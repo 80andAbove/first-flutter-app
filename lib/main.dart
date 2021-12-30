@@ -18,7 +18,9 @@ class MyAppState extends State<MyApp> {
   var questionIndex = 0;
 
   void answerQuestion() {
-    questionIndex = questionIndex + 1;
+    setState(() {
+      questionIndex = questionIndex + 1;
+    });
     print(questionIndex);
   }
 
@@ -36,7 +38,7 @@ class MyAppState extends State<MyApp> {
             children: [
               Text(questions[questionIndex]),
               RaisedButton(
-                child: Text(questions[questionIndex]),
+                child: Text('Answer 1'),
                 onPressed: answerQuestion,
               ),
               RaisedButton(
